@@ -12,7 +12,6 @@ import women_banner from "./Components/Assets/banner_women.png"
 import kid_banner from "./Components/Assets/banner_kids.png"
 import ToastContainer from './Components/Toast/ToastContainer';
 import BackToTop from './Components/BackToTop/BackToTop';
-import DarkModeToggle from './Components/DarkMode/DarkModeToggle';
 import ModernHeader from './Components/Navbar/ModernHeader';
 
 const App = () => {
@@ -34,7 +33,6 @@ const App = () => {
         <Footer/>
         <ToastContainer />
         <BackToTop />
-        <DarkModeToggle />
       </BrowserRouter>
     </div>
   )

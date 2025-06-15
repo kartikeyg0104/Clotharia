@@ -791,46 +791,6 @@
   box-shadow: 0 5px 15px rgba(255, 65, 65, 0.2);
 }
 
-/* Dark mode support */
-.dark .modern-header {
-  background-color: rgba(18, 18, 18, 0.95);
-}
-
-.dark .dropdown-menu,
-.dark .search-dropdown,
-.dark .cart-preview,
-.dark .modern-mobile-menu {
-  background-color: var(--dark-bg-surface);
-}
-
-.dark .modern-hamburger span {
-  background-color: white;
-}
-
-.dark .dropdown-menu {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.dark .cart-preview-item,
-.dark .cart-preview h4,
-.dark .mobile-links > a,
-.dark .mobile-accordion {
-  border-color: var(--dark-border-color);
-}
-
-.dark .search-input,
-.dark .mobile-search {
-  border-color: var(--dark-border-color);
-  background-color: var(--dark-bg-elevated);
-  color: white;
-}
-
-.dark .btn-view-cart {
-  background-color: var(--dark-bg-elevated);
-  border-color: var(--dark-border-color);
-  color: white;
-}
-
 /* Responsive design */
 @media (max-width: 1200px) {
   .modern-header-container {
@@ -872,6 +832,46 @@
   
   .cart-preview {
     width: 280px;
+  }
+  
+  .cart-preview-item img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Target the cart icon container more specifically */
+.cart-container, 
+.modern-cart-icon,
+.header-actions a[href="/cart"],
+.header-actions .cart-icon {
+  /* Reset all properties that might create a box appearance */
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Make sure the cart icon itself remains visible */
+.modern-cart-icon img,
+.cart-container img,
+.header-actions a[href="/cart"] img {
+  /* Adjust size if needed */
+  width: 24px;
+  height: 24px;
+}
+
+/* Ensure the cart count indicator stays properly positioned */
+.modern-cart-count,
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  /* Retain other styling for the count indicator */
+}
   }
   
   .cart-preview-item img {
