@@ -1,0 +1,136 @@
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  border: none;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: var(--z-sticky);
+  transition: all 0.3s var(--transition-bounce);
+  outline: none;
+  overflow: hidden;
+}
+
+.dark-mode-toggle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255, 65, 65, 0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dark-mode-toggle:hover, .dark-mode-toggle:focus {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: var(--shadow-xl);
+}
+
+.dark-mode-toggle:hover::before {
+  opacity: 1;
+}
+
+.dark-mode-toggle:active {
+  transform: translateY(-2px) scale(0.95);
+}
+
+.sun-icon, .moon-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.5s var(--transition-bounce);
+}
+
+.dark-mode-toggle:hover .sun-icon {
+  transform: rotate(45deg) scale(1.1);
+  animation: sun-rays 2s infinite alternate;
+}
+
+.dark-mode-toggle:hover .moon-icon {
+  transform: rotate(-45deg) scale(1.1);
+  animation: moon-glow 2s infinite alternate;
+}
+
+@keyframes sun-rays {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(45deg) scale(1.15); }
+}
+
+@keyframes moon-glow {
+  0% { transform: rotate(0deg) scale(1); filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0)); }
+  100% { transform: rotate(-45deg) scale(1.15); filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)); }
+}
+
+/* Dark mode specific styles */
+.dark .dark-mode-toggle {
+  background-color: #2c2c2c;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Dark mode variables */
+:root {
+  --dark-bg-main: #121212;
+  --dark-bg-surface: #1e1e1e;
+  --dark-bg-elevated: #2c2c2c;
+  --dark-text-primary: #ffffff;
+  --dark-text-secondary: rgba(255, 255, 255, 0.7);
+  --dark-text-disabled: rgba(255, 255, 255, 0.5);
+  --dark-border-color: #333333;
+}
+
+/* Dark mode overrides */
+.dark {
+  --bg-main: var(--dark-bg-main);
+  --bg-light: var(--dark-bg-surface);
+  --bg-light-hover: var(--dark-bg-elevated);
+  --text-dark: var(--dark-text-primary);
+  --text-medium: var(--dark-text-secondary);
+  --text-light: var(--dark-text-disabled);
+  --border-color: var(--dark-border-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dark-mode-toggle {
+    bottom: 80px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .sun-icon, .moon-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Animation for theme transition */
+.theme-transition {
+  animation: theme-fade 0.5s ease;
+}
+
+@keyframes theme-fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Interactive pulse effect on initial load */
+.dark-mode-toggle.pulse-effect {
+  animation: pulse-attention 2s infinite;
+}
+
+@keyframes pulse-attention {
+  0% { box-shadow: 0 0 0 0 rgba(255, 65, 65, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 65, 65, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 65, 65, 0); }
+}

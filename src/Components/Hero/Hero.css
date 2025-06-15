@@ -1,0 +1,241 @@
+.hero{
+    height: 100vh;
+    background: linear-gradient(180deg,#fde1ff,#e1ffea22 60%);
+    display: flex;
+}
+
+.hero-left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding-left: 180px;
+    line-height: 1.1;
+}
+
+.hero-left h2{ 
+    color: #090909;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.hero-left p{
+    color:#171717;
+    font-size: 100px;
+    font-weight: 500;
+
+}
+
+.hero-hand-icon{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero-hand-icon img{
+    width: 105px;
+     
+}
+
+.hero-latest-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width:310px;
+    height: 70px;
+    border-radius: 75px;
+    margin-top:30px;
+    background-color: #ff4141;
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: none;
+    box-shadow: 0 10px 25px -5px rgba(255, 65, 65, 0.35);
+    animation: subtle-float 5s infinite ease-in-out;
+}
+
+/* Add a shine effect */
+.hero-latest-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.6s;
+}
+
+.hero-latest-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -5px rgba(255, 65, 65, 0.45);
+}
+
+.hero-latest-btn:hover::after {
+    left: 100%;
+}
+
+.hero-latest-btn img {
+    width: 26px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.hero-latest-btn:hover img {
+    transform: translateX(5px);
+}
+
+.hero-right{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.hero-right img {
+  max-width: 100%;
+  max-height: 90%;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0px 30px 30px rgba(0, 0, 0, 0.15));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes subtle-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* Hero circles decoration */
+.hero-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 65, 65, 0.1);
+  z-index: 0;
+}
+
+.hero-circle-1 {
+  width: 300px;
+  height: 300px;
+  top: -150px;
+  right: 10%;
+  animation: pulse 8s infinite alternate;
+}
+
+.hero-circle-2 {
+  width: 200px;
+  height: 200px;
+  bottom: -100px;
+  left: 10%;
+  animation: pulse 6s infinite alternate-reverse;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.3; }
+  100% { transform: scale(1.2); opacity: 0.1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .hero-left {
+    padding-left: 100px;
+  }
+  
+  .hero-left p {
+    font-size: 80px;
+  }
+  
+  .hero-latest-btn {
+    width: 280px;
+    height: 65px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+    padding: 50px 0;
+  }
+  
+  .hero-left {
+    padding: 30px 50px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-left p {
+    font-size: 60px;
+  }
+  
+  .hero-hand-icon {
+    justify-content: center;
+  }
+  
+  .hero-right {
+    margin-top: 30px;
+  }
+  
+  .hero-right img {
+    max-height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-left {
+    padding: 30px 20px;
+  }
+  
+  .hero-left h2 {
+    font-size: 22px;
+  }
+  
+  .hero-left p {
+    font-size: 50px;
+  }
+  
+  .hero-hand-icon img {
+    width: 80px;
+  }
+  
+  .hero-latest-btn {
+    width: 250px;
+    height: 60px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-left p {
+    font-size: 40px;
+  }
+  
+  .hero-latest-btn {
+    width: 220px;
+    height: 55px;
+    font-size: 16px;
+  }
+}
