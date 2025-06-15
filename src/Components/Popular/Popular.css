@@ -24,3 +24,41 @@
     display: flex;
     gap: 30px;
 }
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .popular {
+        height: auto;
+        min-height: 70vh;
+        padding: 40px 0;
+    }
+
+    .popular h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .popular hr {
+        width: 150px;
+        height: 4px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .popular-item {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .popular h1 {
+        font-size: 28px;
+    }
+    
+    .popular hr {
+        width: 120px;
+    }
+}
