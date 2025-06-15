@@ -652,6 +652,50 @@
     height: 50px;
     font-size: 14px;
   }
+  
+  /* Improved spacing and layout for very small screens */
+  .mode-toggle {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  
+  .input-group input {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+  
+  .social-login button svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .loginsignup-container {
+    padding: 25px 15px;
+  }
+  
+  .mode-toggle button {
+    padding: 12px 0;
+    font-size: 14px;
+  }
+  
+  .loginsignup-container h1 {
+    font-size: 22px;
+  }
+  
+  .loginsignup-subtitle {
+    font-size: 13px;
+  }
+  
+  .input-group input,
+  .loginsignup form button {
+    height: 50px;
+  }
+  
+  .checkbox-container p {
+    font-size: 12px;
+  }
 }
 
 /* Success state animations */

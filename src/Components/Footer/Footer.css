@@ -348,4 +348,47 @@
     flex-direction: column;
     gap: 10px;
   }
+  
+  /* Enhanced mobile footer */
+  .footer {
+    padding: 40px 15px 20px;
+  }
+  
+  .footer-brand {
+    text-align: center;
+    margin: 0 auto 30px;
+  }
+  
+  .footer-logo {
+    justify-content: center;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+  
+  .footer-links-column {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .footer-links-column h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .newsletter-form input {
+    border-radius: 4px;
+  }
+  
+  .subscribe-btn {
+    width: 100%;
+    border-radius: 4px;
+    padding: 12px;
+  }
 }

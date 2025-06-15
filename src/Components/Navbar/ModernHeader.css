@@ -819,6 +819,20 @@
   .header-actions {
     gap: 10px;
   }
+  
+  /* Improve mobile menu */
+  .modern-mobile-menu {
+    padding-top: 30px;
+  }
+  
+  .mobile-links > a,
+  .accordion-header a {
+    padding: 16px 15px; /* Larger touch target */
+  }
+  
+  .accordion-content a {
+    padding: 14px 15px; /* Larger touch target */
+  }
 }
 
 @media (max-width: 576px) {
@@ -838,45 +852,51 @@
     width: 50px;
     height: 50px;
   }
-}
-
-/* Target the cart icon container more specifically */
-.cart-container, 
-.modern-cart-icon,
-.header-actions a[href="/cart"],
-.header-actions .cart-icon {
-  /* Reset all properties that might create a box appearance */
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Make sure the cart icon itself remains visible */
-.modern-cart-icon img,
-.cart-container img,
-.header-actions a[href="/cart"] img {
-  /* Adjust size if needed */
-  width: 24px;
-  height: 24px;
-}
-
-/* Ensure the cart count indicator stays properly positioned */
-.modern-cart-count,
-.cart-count {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  /* Retain other styling for the count indicator */
-}
+  
+  .modern-header-container {
+    padding: 0 15px;
   }
   
-  .cart-preview-item img {
-    width: 50px;
-    height: 50px;
+  /* Improve mobile cart preview position */
+  .cart-preview {
+    right: -70px; /* Adjust to center with screen */
+  }
+  
+  .cart-preview::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 80px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    transform: rotate(45deg);
+    box-shadow: -2px -2px 5px rgba(0,0,0,0.05);
+  }
+}
+
+@media (max-width: 375px) {
+  .modern-header-logo img {
+    height: 28px;
+  }
+  
+  .modern-header-logo span {
+    font-size: 16px;
+  }
+  
+  .cart-preview {
+    width: calc(100vw - 30px);
+    right: -15px;
+    box-sizing: border-box;
+  }
+  
+  .cart-preview::before {
+    right: 22px;
+  }
+  
+  /* Optimize mobile menu */
+  .mobile-search input {
+    font-size: 14px;
   }
 }
 
